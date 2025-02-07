@@ -1,4 +1,5 @@
 import 'package:app4/controller/searchController.dart';
+import 'package:app4/ui/ui_component/CustomAppbar.dart';
 import 'package:app4/ui/ui_component/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,23 +19,7 @@ class Search extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        backgroundColor: Colors.orangeAccent,
-        title: Center(
-          child: Text(
-            'Search product',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              letterSpacing: 2.0,
-            ),
-          ),
-        ),
-        elevation: 10, 
-      ),
+      appBar: CustomAppbar(title: 'Search Product', leading: false),
       
       body: SafeArea(
         child: Padding(

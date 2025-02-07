@@ -1,4 +1,5 @@
 import 'package:app4/controller/userdetailController.dart';
+import 'package:app4/ui/ui_component/CustomAppbar.dart';
 import 'package:app4/ui/ui_component/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -12,23 +13,8 @@ class Profilepage extends StatelessWidget {
     final Userdetailcontroller userController = Get.put(Userdetailcontroller());
 
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        backgroundColor: Colors.orangeAccent,
-        title: Center(
-          child: Text(
-            'Profile',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              letterSpacing: 2.0,
-            ),
-          ),
-        ),
-        elevation: 10, 
-      ),
+            appBar: CustomAppbar(title: 'Profile', leading: false),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),

@@ -1,6 +1,7 @@
 import 'package:app4/controller/cartController.dart';
 import 'package:app4/pages/payment/payment.dart';
 import 'package:app4/ui/custombutton.dart';
+import 'package:app4/ui/ui_component/CustomAppbar.dart';
 import 'package:app4/ui/ui_component/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -27,23 +28,7 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        backgroundColor: Colors.orangeAccent,
-        title: Center(
-          child: Text(
-            'Cart',
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 32,
-              letterSpacing: 2.0,
-            ),
-          ),
-        ),
-        elevation: 10, 
-      ),
+      appBar: CustomAppbar(title: 'Cart', leading: false),
 
       body: Padding(
         padding: const EdgeInsets.all(16.0),
