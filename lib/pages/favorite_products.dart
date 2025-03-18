@@ -1,3 +1,4 @@
+import 'package:app4/ui/ui_component/CustomAppbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controller/favoriteController.dart';
@@ -8,13 +9,10 @@ class FavoriteProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Access the FavoriteCont controller
     final FavoriteCont controller = Get.find<FavoriteCont>();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Favorite Products"),
-      ),
+      appBar: CustomAppbar(title: 'Favorite'),
       body: Obx(() {
         return controller.favproducts.isEmpty
             ? Center(child: Text("No favorites added yet"))
