@@ -16,10 +16,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
     return BottomNavigationBar(
       currentIndex: widget.currentIndex,
       onTap: (index) {
-        widget.onTap(index); 
+        widget.onTap(index);
         switch (index) {
           case 0:
-            Get.toNamed('/home');
+            Get.toNamed('/home');  // Use Get.toNamed() for navigation
             break;
           case 1:
             Get.toNamed('/search');
@@ -28,17 +28,18 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
             Get.toNamed('/cart');
             break;
           case 3:
+            Get.toNamed('/favorite');
+            break;
+          case 4:
             Get.toNamed('/profile');
             break;
         }
       },
-
       selectedItemColor: Colors.orangeAccent,
       unselectedItemColor: Colors.grey,
       backgroundColor: Colors.black12,
       showUnselectedLabels: false, 
       elevation: 8, 
-       
       items: const [
         BottomNavigationBarItem( 
           icon: Icon(Icons.home),
@@ -51,6 +52,10 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart),
           label: 'Cart',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.favorite),
+          label: 'Favorite',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle),

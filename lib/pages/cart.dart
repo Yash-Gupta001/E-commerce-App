@@ -28,7 +28,7 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppbar(title: 'Cart', leading: false),
+      appBar: CustomAppbar(title: 'Cart'),
 
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -42,7 +42,7 @@ class _CartState extends State<Cart> {
                       itemCount: cartController.cart.value,
                       itemBuilder: (context, index) {
                         return ListTile(
-                          title: Text('Product $index'),
+                          title: Text('Product ${index+1}'),
                           subtitle: Text('Price: \₹${cartController.prodVal.value}'),
                         );
                       },

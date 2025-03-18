@@ -20,6 +20,8 @@ dependencies:
   horizontal_card_pager: ^1.1.1
   double_back_to_close_app: any
   floor: ^1.5.0
+  shared_preferences: ^2.5.1
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:

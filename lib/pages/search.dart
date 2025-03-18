@@ -3,6 +3,8 @@ import 'package:app4/ui/ui_component/CustomAppbar.dart';
 import 'package:app4/ui/ui_component/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:double_back_to_close_app/double_back_to_close_app.dart';
+
 
 class Search extends StatelessWidget {
   const Search({super.key});
@@ -19,48 +21,53 @@ class Search extends StatelessWidget {
     }
 
     return Scaffold(
-      appBar: CustomAppbar(title: 'Search Product', leading: false),
+      appBar: CustomAppbar(title: 'Search Product'),
       
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            children: [
-              // Search bar
-              TextField(
-                decoration: InputDecoration(
-                  labelText: 'Type to search product',
-                  border: OutlineInputBorder(),
-                  prefixIcon: GestureDetector(
-                    onTap: controller.pickImageFromCamera, // Trigger camera
-                    child: Icon(Icons.camera_alt_outlined),
+      body: DoubleBackToCloseApp(
+        snackBar: const SnackBar(
+          content: Text('Tap back again to leave'),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(10),
+            child: Column(
+              children: [
+                // Search bar
+                TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Type to search product',
+                    border: OutlineInputBorder(),
+                    prefixIcon: GestureDetector(
+                      onTap: controller.pickImageFromCamera, // Trigger camera
+                      child: Icon(Icons.camera_alt_outlined),
+                    ),
+                    fillColor: Colors.orange[100],
+                    filled: true,
                   ),
-                  fillColor: Colors.orange[100],
-                  filled: true,
                 ),
-              ),
-
-              const SizedBox(height: 20),
-              
-              // Dummy list of search results
-
-              // Expanded(
-              //   child: ListView.builder(
-              //     itemCount: 10, 
-              //     itemBuilder: (context, index) {
-              //       return ListTile(
-              //         leading: Icon(Icons.search),
-              //         title: Text('Search result #$index'),
-              //         subtitle: Text('This is a sample result description.'),
-              //         onTap: () {
-              //           // Handle item tap if needed
-              //         },
-              //       );
-              //     },
-              //   ),
-              // ),
-
-            ],
+        
+                const SizedBox(height: 20),
+                
+                // Dummy list of search results
+        
+                // Expanded(
+                //   child: ListView.builder(
+                //     itemCount: 10, 
+                //     itemBuilder: (context, index) {
+                //       return ListTile(
+                //         leading: Icon(Icons.search),
+                //         title: Text('Search result #$index'),
+                //         subtitle: Text('This is a sample result description.'),
+                //         onTap: () {
+                //           // Handle item tap if needed
+                //         },
+                //       );
+                //     },
+                //   ),
+                // ),
+        
+              ],
+            ),
           ),
         ),
       ),

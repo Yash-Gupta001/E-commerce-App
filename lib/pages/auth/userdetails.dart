@@ -108,7 +108,7 @@ class UserDetail extends StatelessWidget {
                     // Validate the form
                     if (userController.validateUser()) {
                       
-                      Get.off(Home());
+                      Get.offAll(Home());
                     } else {
                       
                       Get.snackbar(
