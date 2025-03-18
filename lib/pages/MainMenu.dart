@@ -140,7 +140,8 @@ class HomeState extends State<Home> {
                                       favoriteController.favproducts.any((prod) => prod.id == product.id)
                                           ? Icons.favorite
                                           : Icons.favorite_border,
-                                      color: Colors.red,
+                                      color: Colors.white,
+                                      
                                     ),
                                     onPressed: () {
                                       // Toggle product in favorites
